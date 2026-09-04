@@ -1,0 +1,1133 @@
+# Public release: selective redaction per manuscript technique (specific sensitive tokens → [REDACTED]; structure preserved).
+# Namespace: http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH
+
+@prefix : <http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/> .
+
+<http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH> rdf:type owl:Ontology ;
+    rdfs:label "Serapis Personal Mental Health Ontology (SPMH)"@en ;
+    dc:title "Serapis Personal Mental Health Ontology (SPMH)" ;
+    dc:description "Trace-based ontology for organizing depression-related social media evidence with provenance, aligned with DSM-5-TR diagnostic criteria."@en ;
+    dc:creator "Alexandre Augusto Foppa, Wesllei Felipe Heckler, Luan Paris Feijó, Jorge Luis Victória Barbosa" ;
+    owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasA
+:hasA rdf:type owl:ObjectProperty ;
+      rdfs:domain :Context ;
+      rdfs:range :Trace ;
+      rdfs:comment "A context may have 0 to multiple traces of depression" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isAbout
+:isAbout rdf:type owl:ObjectProperty ;
+         rdfs:domain :Context ;
+         rdfs:range :Person .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isPreservedAs
+:isPreservedAs rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Publication ;
+               rdfs:range :Artifact ;
+               rdfs:comment "An artifact generated to preserve a social media publication" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isResultOf
+:isResultOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Artifact ,
+                        :Trace ;
+            rdfs:range :Procedure ;
+            rdfs:comment "An artifcat is the result of a procedure" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/owns
+:owns rdf:type owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Account ;
+      rdfs:comment "The relation of a person with his social media  account" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlataform
+:comesFromSocialPlataform rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Account ,
+                                      :Publication ;
+                          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasAge
+:hasAge rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:positiveInteger ;
+        rdfs:comment "A person's age" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasCapturedMoment
+:hasCapturedMoment rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:range xsd:dateTimeStamp ;
+                   rdfs:comment "The moment when an evidence is captured" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent
+:hasContent rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Context ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEducation
+:hasEducation rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string ;
+              rdfs:comment "A person's level of education" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEpisode
+:hasEpisode rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Bipolar ,
+                        :Depression ,
+                        :Psychotic ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "A flag for mental health conditions with the possibility of having episodes" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEthnicity
+:hasEthnicity rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string ;
+              rdfs:comment "A person's ethnicity" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasExplanation
+:hasExplanation rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Behaviour ,
+                            :Cognition ,
+                            :Feeling ,
+                            :Impairment ,
+                            :Trace ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The documentation of why a text was considered relevant" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasFamily
+:hasFamily rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           rdfs:comment "A person's family member or group" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasGender
+:hasGender rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           rdfs:comment "A person's gender" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasHashcode
+:hasHashcode rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Artifact ;
+             rdfs:range xsd:string ;
+             rdfs:comment "A hashcode for data integrity assurance" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasImageContent
+:hasImageContent rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :hasContent .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasIncome
+:hasIncome rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           rdfs:comment "A person's level of income" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasMoment
+:hasMoment rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Artifact ,
+                       :MedicalRecord ,
+                       :Post ;
+           rdfs:range xsd:dateTimeStamp ;
+           rdfs:comment "The moment when a publication is created" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string ;
+         rdfs:comment "A person's name" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasRelationship
+:hasRelationship rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "A person's relationship" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasSentimentScore
+:hasSentimentScore rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Publication ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "A sentiment socre calculated by sentiment analysis techniques" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasTextContent
+:hasTextContent rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :hasContent .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasUrl
+:hasUrl rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Account ,
+                    :Artifact ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The url of an account or artifact" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasVideoContent
+:hasVideoContent rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :hasContent .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isRelevant
+:isRelevant rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Publication ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "A flag indicating if an artifact is relevant for a depression diagnosis" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account
+:Account rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AlcoholUse
+:AlcoholUse rdf:type owl:Class ;
+            rdfs:subClassOf :Behaviour .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys
+:Analisys rdf:type owl:Class ;
+          rdfs:subClassOf :Procedure .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Appetite
+:Appetite rdf:type owl:Class ;
+          rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact
+:Artifact rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour
+:Behaviour rdf:type owl:Class ;
+           rdfs:subClassOf :Trace .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar
+:Bipolar rdf:type owl:Class ;
+         rdfs:subClassOf :Condition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Birth
+:Birth rdf:type owl:Class ;
+       rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ChildhoodExperiences
+:ChildhoodExperiences rdf:type owl:Class ;
+                      rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition
+:Cognition rdf:type owl:Class ;
+           rdfs:subClassOf :Trace .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Collection
+:Collection rdf:type owl:Class ;
+            rdfs:subClassOf :Procedure .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Concentration
+:Concentration rdf:type owl:Class ;
+               rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition
+:Condition rdf:type owl:Class ;
+           rdfs:subClassOf :Trace .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context
+:Context rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Death
+:Death rdf:type owl:Class ;
+       rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/DecisionMaking
+:DecisionMaking rdf:type owl:Class ;
+                rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Delusion
+:Delusion rdf:type owl:Class ;
+          rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/DepressedMood
+:DepressedMood rdf:type owl:Class ;
+               rdfs:subClassOf :Feeling ;
+               rdfs:comment "Depressive mood is a persistent state of sadness and low energy, often accompanied by feelings of hopelessness and disinterest in daily activities. Synonyms: Sadness, Rumination, Worthlessness, Distress, Indecisiveness, Hopelessness, Melancholy and Loneliness" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Depression
+:Depression rdf:type owl:Class ;
+            rdfs:subClassOf :Condition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Discrimination
+:Discrimination rdf:type owl:Class ;
+                rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event
+:Event rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Fatigue
+:Fatigue rdf:type owl:Class ;
+         rdfs:subClassOf :Feeling ;
+         rdfs:comment "Fatigue is a state of tiredness or exhaustion resulting from mental or physical exertion or illness. Synonyms:Burrden, Energy (Lack of), Tiredness" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling
+:Feeling rdf:type owl:Class ;
+         rdfs:subClassOf :Trace .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Gastrointestinal
+:Gastrointestinal rdf:type owl:Class ;
+                  rdfs:subClassOf :Condition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Guilt
+:Guilt rdf:type owl:Class ;
+       rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Hypersomnia
+:Hypersomnia rdf:type owl:Class ;
+             rdfs:subClassOf :Sleep .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Hypomania
+:Hypomania rdf:type owl:Class ;
+           rdfs:subClassOf :Bipolar .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Identification
+:Identification rdf:type owl:Class ;
+                rdfs:subClassOf :Procedure .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Impairment
+:Impairment rdf:type owl:Class ;
+            rdfs:subClassOf :Trace .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ImpulseControl
+:ImpulseControl rdf:type owl:Class ;
+                rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Insomnia
+:Insomnia rdf:type owl:Class ;
+          rdfs:subClassOf :Sleep .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Interest
+:Interest rdf:type owl:Class ;
+          rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Irritability
+:Irritability rdf:type owl:Class ;
+              rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Mania
+:Mania rdf:type owl:Class ;
+       rdfs:subClassOf :Bipolar .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord
+:MedicalRecord rdf:type owl:Class ;
+               rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Memory
+:Memory rdf:type owl:Class ;
+        rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Pain
+:Pain rdf:type owl:Class ;
+      rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Pleasure
+:Pleasure rdf:type owl:Class ;
+          rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post
+:Post rdf:type owl:Class ;
+      rdfs:subClassOf :Publication .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Presentation
+:Presentation rdf:type owl:Class ;
+              rdfs:subClassOf :Procedure .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure
+:Procedure rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Profile
+:Profile rdf:type owl:Class ;
+         rdfs:subClassOf :Publication .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PsychomotorActivity
+:PsychomotorActivity rdf:type owl:Class ;
+                     rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Psychotic
+:Psychotic rdf:type owl:Class ;
+           rdfs:subClassOf :Condition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation
+:Relation rdf:type owl:Class ;
+          rdfs:subClassOf :Trace .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Schizophrenia
+:Schizophrenia rdf:type owl:Class ;
+               rdfs:subClassOf :Psychotic .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SexualAbuse
+:SexualAbuse rdf:type owl:Class ;
+             rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SignificantLoss
+:SignificantLoss rdf:type owl:Class ;
+                 rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Sleep
+:Sleep rdf:type owl:Class ;
+       rdfs:subClassOf :Behaviour .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SocialIsolation
+:SocialIsolation rdf:type owl:Class ;
+                 rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SomaticComplaints
+:SomaticComplaints rdf:type owl:Class ;
+                   rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Storage
+:Storage rdf:type owl:Class ;
+         rdfs:subClassOf :Procedure .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Stress
+:Stress rdf:type owl:Class ;
+        rdfs:subClassOf :Feeling .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SubstanceUse
+:SubstanceUse rdf:type owl:Class ;
+              rdfs:subClassOf :Behaviour .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour
+:SuicidalBehaviour rdf:type owl:Class ;
+                   rdfs:subClassOf :Behaviour .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicideAttempt
+:SuicideAttempt rdf:type owl:Class ;
+                rdfs:subClassOf :SuicidalBehaviour .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicideIdeation
+:SuicideIdeation rdf:type owl:Class ;
+                 rdfs:subClassOf :SuicidalBehaviour .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Thinking
+:Thinking rdf:type owl:Class ;
+          rdfs:subClassOf :Cognition .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace
+:Trace rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trauma
+:Trauma rdf:type owl:Class ;
+        rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Weight
+:Weight rdf:type owl:Class ;
+        rdfs:subClassOf :Condition .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AccountID1
+:AccountID1 rdf:type owl:NamedIndividual ,
+                     :Account ;
+            :comesFromSocialPlataform "Instagram" ;
+            :hasUrl "https://www.instagram.com/REDACTED/" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact01
+:Artifact01 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "c73ac0375935c5ffaf6b1dfec1ed9e949f9ea2cb618ca5e7ce7435d6ecfebeeb" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact02
+:Artifact02 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "e64af9c05ea30fb763ebae3a0509257e762db83ad8532c8fcdaac02826d6a5be" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact03
+:Artifact03 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "5459fabf4692cee8c490292c166a0b626a2bc58ae2d8c400cddd9642c0a98ee1" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact04
+:Artifact04 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "943a7a3e891937212b76dfc4db0eed8f405c7acd98866880a91a40d1f58b5065" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact05
+:Artifact05 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "e0947431a6f6e4e7df69bfc6e7cc1559f5716d3880815e6e3f115687fd175ff7" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact06
+:Artifact06 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "406929903c329f3087ca9e4c5c7d10c208ef357fed8a9cb5eb48e04099d9016d" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact07
+:Artifact07 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "de54672e3f452459ac79689f601c8889b5a1e0a629a75bb01ab9650134f08449" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact08
+:Artifact08 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "b002d6ec642f346d0d65ba10f35655eee290cca3dd2c8bc95027a923748991a0" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact09
+:Artifact09 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "e9c76d6b1ec4c7c3aa5e38ec318ff78c7bc03174de21b6b5a2b33166e8ae0905" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact10
+:Artifact10 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "6056ae2fa6b104a2b76902c9664ffc89e272b65baed683d53eada9d9f6993f9b" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact11
+:Artifact11 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "819eba076a38e6aa3114b05be2182733aa0c3c4306310017c28cc543bb115e35" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact12
+:Artifact12 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "cced3e94c2f464d968fdab4728f37ec894a2234b1651959a20d02d172dbcf640" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact13
+:Artifact13 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "a113e5dd1b7aedfb67f97266c090d12f9a0441c917060a4378a7ab340eebc753" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact14
+:Artifact14 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "22405e91888ce3483c6d7f12361e1b83e831984f66bb96acfa7d221b99029e6a" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact15
+:Artifact15 rdf:type owl:NamedIndividual ,
+                     :Artifact ;
+            :isResultOf :LLMTranslation ,
+                        :RegularAPIExtraction ,
+                        :SQLliteLocalDatabase ,
+                        :UserSharing ,
+                        :VADERSentimentScoring ;
+            :hasHashcode "58f96f5efde1ccb26bea2231f29d3c321805a5f39baf190033372c84c107a608" ;
+            :hasMoment "2024-09-05T15:52:44Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection
+:LLMTraceDetection rdf:type owl:NamedIndividual ,
+                            :Analisys ;
+                   :isResultOf :LLMTraceDetection ;
+                   :hasExplanation "the mention of no longer using a [REDACTED] and experiencing [REDACTED] indicates a physical condition, potentially an injury or chronic condition, that has been managed over time." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation
+:LLMTranslation rdf:type owl:NamedIndividual ,
+                         :Analisys .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord01
+:MedicalRecord01 rdf:type owl:NamedIndividual ,
+                          :MedicalRecord ;
+                 :isAbout :Person01 ;
+                 :hasMoment "2024-10-05T14:17:44Z"^^xsd:dateTimeStamp ;
+                 :hasTextContent "The patient underwent a thorough evaluation session, including clinical interviews and psychological assessments, to assess their mental health status. It was concluded that the patient does not exhibit symptoms consistent with depression." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01
+:Person01 rdf:type owl:NamedIndividual ,
+                   :Person ;
+          :owns :AccountID1 ;
+          :hasAge "34"^^xsd:positiveInteger ;
+          :hasEducation "master's student" ;
+          :hasEthnicity "Caucasian" ;
+          :hasFamily "Mother" ;
+          :hasGender "Male" ;
+          :hasIncome "classified" ;
+          :hasName "REDACTED" ;
+          :hasRelationship "Friend 01" ,
+                           "Friend 02" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID01
+:PostID01 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace17 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact01 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2024-02-26T01:07:57Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore -0.5423 ;
+          :hasTextContent "The death of [REDACTED], sitting in front of a dead rosebush that grew where she stuck her umbrella in the ground. It didn't turn out as I wanted, but I posted it anyway" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID02
+:PostID02 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace16 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact02 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2023-12-21T20:14:08Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Taking advantage of the holidays to draw a little" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID03
+:PostID03 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace12 ,
+                :Trace13 ,
+                :Trace14 ,
+                :Trace15 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact03 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2022-05-14T01:39:45Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.0516 ;
+          :hasTextContent "After a decade, recording the first time I'm going back to [REDACTED] and have a beer after, without using a [REDACTED]. It still hurts (and it's not a little), but between weakening the pain with [REDACTED] treatment, lifestyle changes, and personal growth, today, the pain didn't take away my smile, so I won this battle. A small victory, but one that I think is worthy of celebration" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID04
+:PostID04 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace11 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact04 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2021-12-22T00:51:17Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Updating the profile picture, after four years" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID05
+:PostID05 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace09 ,
+                :Trace10 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact05 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2021-06-21T02:58:09Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Rest in peace, dear [REDACTED]. Heaven became a happier place" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID06
+:PostID06 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace08 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact06 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2021-05-14T15:28:46Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Human, my plate was missing. Folks, I need a plate for lunch!" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID07
+:PostID07 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace06 ,
+                :Trace07 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact07 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2021-04-29T22:05:03Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.4588 ;
+          :hasTextContent "In the first meeting with a new coworker, she said that I look like a character from The Lord of the Rings. I thought it was funny, so I decided to check if my social isolation look resembles any of the bearded ones, or if I'm an original character. What do you think?" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID08
+:PostID08 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace05 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact08 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2021-03-12T21:26:43Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Because I couldn't keep drawing" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID09
+:PostID09 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace04 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact09 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2020-12-24T23:47:39Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Want a loving companion for the next year? How about one of these kittens?" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID10
+:PostID10 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace02 ,
+                :Trace03 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact10 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2020-09-22T22:04:20Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.4574 ;
+          :hasTextContent "Due to the pandemic and its impacts on my physical condition, I ended up not being able to attend my graduation ceremony in [REDACTED], and only managed to pick up the diploma today. And, to my surprise, I found with it the certificates of having received the [REDACTED] Honor Student Award and the Outstanding Student award from the [REDACTED]. So, since I didn't have the opportunity to thank at the time, I would like to thank through my social networks for this recognition, as well as to share this news with my friends and ask for apologies for taking so long to send this thanks - it wasn't on purpose, I just didn't know before. I also don't know exactly who to thank... but the feeling is sincere, and I hope it reaches all those involved :) \\n\\n#[REDACTED]HonorStudentAward" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID11
+:PostID11 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact11 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2020-05-09T03:09:26Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "Harley Quinn in shades of gray - from the quarantine drawings series" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID12
+:PostID12 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact12 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2020-04-23T21:31:08Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore -0.2263 ;
+          :hasTextContent "Ready to buy bread, and to deliver a fatality to Scorpion" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID13
+:PostID13 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :hasA :Trace01 ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact13 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2020-04-01T00:04:48Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "This is [REDACTED], my cat, for those who don't know. Taking advantage of the quarantine to practice a little drawing" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID14
+:PostID14 rdf:type owl:NamedIndividual ,
+                   :Post ;
+          :isAbout :AccountID1 ;
+          :isPreservedAs :Artifact14 ;
+          :comesFromSocialPlataform "Instagram" ;
+          :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+          :hasMoment "2018-07-06T21:31:50Z"^^xsd:dateTimeStamp ;
+          :hasSentimentScore 0.2263 ;
+          :hasTextContent "How to improve teamwork?" ;
+          :hasUrl "https://www.instagram.com/p/REDACTED/" ;
+          :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ProfileID1
+:ProfileID1 rdf:type owl:NamedIndividual ,
+                     :Profile ;
+            :isAbout :AccountID1 ;
+            :isPreservedAs :Artifact15 ;
+            :comesFromSocialPlataform "Instagram" ;
+            :hasCapturedMoment "2024-08-05T19:05:54Z"^^xsd:dateTimeStamp ;
+            :hasSentimentScore 0.4588 ;
+            :hasTextContent """Technologist with a focus on health
+Master's student in IT
+Designer and RPG enthusiast as a hobby""" ;
+            :hasUrl "https://www.instagram.com/REDACTED/" ;
+            :isRelevant "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction
+:RegularAPIExtraction rdf:type owl:NamedIndividual ,
+                               :Collection .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase
+:SQLliteLocalDatabase rdf:type owl:NamedIndividual ,
+                               :Storage .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace01
+:Trace01 rdf:type owl:NamedIndividual ,
+                  :Relation ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "the text includes a name, \"[REDACTED],\" which is the name of the cat" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace02
+:Trace02 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "The text expresses gratitude and surprise, and it implicitly conveys feelings of regret for the delayed acknowledgment. These sentiments relate to gratitude and regret." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace03
+:Trace03 rdf:type owl:NamedIndividual ,
+                  :Condition ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "The text mentions an impact on physical condition due to the pandemic, which affected the ability to attend a [REDACTED]." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace04
+:Trace04 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "the text conveys a sense of hope and positivity by offering the companionship of kittens, which can relate to feelings of pleasure and joy." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace05
+:Trace05 rdf:type owl:NamedIndividual ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "Potentially, the inability to continue drawing could be linked to feelings like frustration or sadness, but these are not explicitly stated in the text." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace06
+:Trace06 rdf:type owl:NamedIndividual ,
+                  :Relation ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "includes a relationship context (interaction with a coworker)" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace07
+:Trace07 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "the text conveys humor and perhaps curiosity about self-appearance which could relate to the feelings of amusement or curiosity." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace08
+:Trace08 rdf:type owl:NamedIndividual ,
+                  :Irritability ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "the text might convey a sense of urgency or mild distress about needing a plate for lunch, which can relate to feelings of annoyance or frustration. The message humorously expresses a minor inconvenience (a missing plate) and uses personification (\"Human, my plate was missing\") to add character to the statement, likely meant to amuse or engage social media followers." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace09
+:Trace09 rdf:type owl:NamedIndividual ,
+                  :Relation ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "The text indicates a relationship of affection and loss (the speaker and the deceased referred to as \"dear [REDACTED]\")" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace10
+:Trace10 rdf:type owl:NamedIndividual ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "Yes, the text conveys sentiments of sadness and loss due to the death of \"dear [REDACTED],\" which might be a nickname for a beloved pet or individual. It also expresses a hopeful sentiment that \"Heaven became a happier place.\"" .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace11
+:Trace11 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "Potentially, it could suggest a sense of renewal or change, given the update of a profile picture after a significant period. However, these feelings are not explicitly mentioned." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace12
+:Trace12 rdf:type owl:NamedIndividual ,
+                  :AlcoholUse ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "The text mentions [REDACTED], which indicates alcohol use." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace13
+:Trace13 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "The text conveys a range of sentiments including overcoming [REDACTED], personal growth, and a sense of victory. These can relate to sentiments of hope, perseverance, and happiness." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace14
+:Trace14 rdf:type owl:NamedIndividual ,
+                  :Condition ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "The mention of no longer using a [REDACTED] and experiencing [REDACTED] indicates a physical condition, potentially an injury or chronic condition, that has been managed over time." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace15
+:Trace15 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "mentions a significant life event (returning to [REDACTED]), a physical condition ([REDACTED]), and personal lifestyle changes." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace16
+:Trace16 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "Potentially, the text might convey a sense of relaxation or enjoyment from engaging in a leisure activity (drawing) during the holidays, but these sentiments are not explicitly mentioned." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace17
+:Trace17 rdf:type owl:NamedIndividual ,
+                  :Feeling ;
+         :isResultOf :LLMTraceDetection ;
+         :hasExplanation "the text might convey sentiments of disappointment or dissatisfaction regarding the artistic outcome, reflecting feelings such as frustration." .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing
+:UserSharing rdf:type owl:NamedIndividual ,
+                      :Identification .
+
+
+###  http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring
+:VADERSentimentScoring rdf:type owl:NamedIndividual ,
+                                :Analisys .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
