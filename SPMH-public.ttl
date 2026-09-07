@@ -639,6 +639,9 @@ rdfs:label rdfs:label "label"@en ;
 owl:versionInfo rdfs:label "version information"@en ;
     rdfs:comment "Annotation property for ontology version metadata."@en .
 
+skos:altLabel rdfs:label "alternative label"@en ;
+    rdfs:comment "Alternative lexical label for a resource."@en .
+
 :AccountID1 a :Account,
         owl:NamedIndividual ;
     :comesFromSocialPlataform "Instagram" ;

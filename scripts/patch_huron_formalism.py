@@ -29,6 +29,7 @@ IMPORTED_META: dict[URIRef, tuple[str, str]] = {
     RDFS.comment: ("comment", "Provides a human-readable description of a resource."),
     RDFS.label: ("label", "Provides a human-readable version of a resource name."),
     OWL.versionInfo: ("version information", "Annotation property for ontology version metadata."),
+    SKOS.altLabel: ("alternative label", "Alternative lexical label for a resource."),
 }
 
 SYNONYM_TYPO_FIXES = {"Burrden": "Burden"}

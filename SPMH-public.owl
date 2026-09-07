@@ -8,92 +8,39 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/DecisionMaking">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">DecisionMaking</rdfs:label>
-    <rdfs:comment xml:lang="en">The process of making choices by identifying options and assessing the impact of each option.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID09">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace04"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact09"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-12-24T23:47:39Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
-    <hasTextContent>Want a loving companion for the next year? How about one of these kittens?</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Mania">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Mania</rdfs:label>
-    <rdfs:comment xml:lang="en">A mental state characterized by excessive excitement, energy, and euphoria.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/publishedInSocialPlatform">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasMoment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">publishedInSocialPlatform</rdfs:label>
-    <rdfs:comment xml:lang="en">The social media platform where the account was created</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasMoment</rdfs:label>
+    <rdfs:comment xml:lang="en">The moment when a context (publication or mental record) is created</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Delusion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Delusion</rdfs:label>
-    <rdfs:comment xml:lang="en">A false belief held with strong conviction despite superior evidence to the contrary.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasSentimentScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasSentimentScore</rdfs:label>
+    <rdfs:comment xml:lang="en">A sentiment score calculated by sentiment analysis techniques</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Hypersomnia">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Hypersomnia</rdfs:label>
-    <rdfs:comment xml:lang="en">Hypersomnia is characterized by excessive daytime sleepiness, leading to prolonged and unrefreshing sleep.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Sleep"/>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:comment xml:lang="en">A person subject of the investigation</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID04">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID12">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace11"/>
     <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact04"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact12"/>
     <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
     <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-12-22T00:51:17Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
-    <hasTextContent>Updating the profile picture, after four years</hasTextContent>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-04-23T21:31:08Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.2263</hasSentimentScore>
+    <hasTextContent>Ready to buy bread, and to deliver a fatality to Scorpion</hasTextContent>
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SubstanceUse">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Substance Use</rdfs:label>
-    <rdfs:comment xml:lang="en">A trace of substance use other than alcohol, whether illicit or prescribed medication, which may impact the diagnosis of depression</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Pain">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Pain</rdfs:label>
-    <rdfs:comment xml:lang="en">An unpleasant sensory and emotional experience associated with actual or potential tissue damage.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Fatigue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Fatigue</rdfs:label>
-    <rdfs:comment xml:lang="en">Fatigue is a state of tiredness or exhaustion resulting from mental or physical exertion or illness. Synonyms:Burrden, Energy (Lack of), Tiredness</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <skos:altLabel xml:lang="en">Burden</skos:altLabel>
-    <skos:altLabel xml:lang="en">Energy (Lack of)</skos:altLabel>
-    <skos:altLabel xml:lang="en">Tiredness</skos:altLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Death">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Death</rdfs:label>
-    <rdfs:comment xml:lang="en">A death of a familiar, friend or any significant people that may cause grief, including pets.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID11">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -108,17 +55,99 @@
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Pleasure">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Pleasure</rdfs:label>
-    <rdfs:comment xml:lang="en">A feeling of happy satisfaction and enjoyment.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <rdfs:label xml:lang="en">Condition</rdfs:label>
+    <rdfs:comment xml:lang="en">A state of health, whether normal or disrupted, that may influences the depression diagnosis.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact08">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>b002d6ec642f346d0d65ba10f35655eee290cca3dd2c8bc95027a923748991a0</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>e64af9c05ea30fb763ebae3a0509257e762db83ad8532c8fcdaac02826d6a5be</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasCapturedMoment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasCapturedMoment</rdfs:label>
+    <rdfs:comment xml:lang="en">The moment when an evidence is captured</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Birth">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Birth</rdfs:label>
     <rdfs:comment xml:lang="en">The birth of a child</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>5459fabf4692cee8c490292c166a0b626a2bc58ae2d8c400cddd9642c0a98ee1</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/DepressedMood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">DepressedMood</rdfs:label>
+    <rdfs:comment xml:lang="en">Persistent sadness and a lack of interest or pleasure in previously rewarding or enjoyable activities. Synonyms: Sadness, Rumination, Worthlessness, Distress, Indecisiveness, Hopelessness, Melancholy and Loneliness</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <skos:altLabel xml:lang="en">Sadness</skos:altLabel>
+    <skos:altLabel xml:lang="en">Rumination</skos:altLabel>
+    <skos:altLabel xml:lang="en">Worthlessness</skos:altLabel>
+    <skos:altLabel xml:lang="en">Distress</skos:altLabel>
+    <skos:altLabel xml:lang="en">Indecisiveness</skos:altLabel>
+    <skos:altLabel xml:lang="en">Hopelessness</skos:altLabel>
+    <skos:altLabel xml:lang="en">Melancholy</skos:altLabel>
+    <skos:altLabel xml:lang="en">Loneliness</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasName</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's name</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>the text conveys humor and perhaps curiosity about self-appearance which could relate to the feelings of amusement or curiosity.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <owns rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AccountID1"/>
+    <hasEducation>REDACTED</hasEducation>
+    <hasEthnicity>REDACTED</hasEthnicity>
+    <hasFamily>Mother</hasFamily>
+    <hasGender>REDACTED</hasGender>
+    <hasIncome>REDACTED</hasIncome>
+    <hasName>REDACTED</hasName>
+    <hasRelationship>Friend 01</hasRelationship>
+    <hasRelationship>Friend 02</hasRelationship>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID10">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -135,248 +164,17 @@
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicideAttempt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Suicide Attempt</rdfs:label>
-    <rdfs:comment xml:lang="en">A suicide attempt is an intentional, self-inflicted action with the purpose of causing one's own death, although it may not result in death.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour"/>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isResultOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">isResultOf</rdfs:label>
+    <rdfs:comment xml:lang="en">An artifact is the result of a procedure</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>de54672e3f452459ac79689f601c8889b5a1e0a629a75bb01ab9650134f08449</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Storage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Evidence storage procedure</rdfs:label>
-    <rdfs:comment xml:lang="en">Procedure step for storing collected digital evidence with integrity controls.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-    <owl:disjointWith rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Memory"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
-    <rdfs:label xml:lang="en">description</rdfs:label>
-    <rdfs:comment xml:lang="en">Describes the resource in free text.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID05">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace09"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace10"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact05"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-06-21T02:58:09Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
-    <hasTextContent>Rest in peace, dear [REDACTED]. Heaven became a happier place</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace02">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>The text expresses gratitude and surprise, and it implicitly conveys feelings of regret for the delayed acknowledgment. These sentiments relate to gratitude and regret.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ProfileID1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Profile"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact15"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4588</hasSentimentScore>
-    <hasTextContent>REDACTED</hasTextContent>
-    <hasUrl>https://www.instagram.com/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SignificantLoss">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Significant Loss</rdfs:label>
-    <rdfs:comment xml:lang="en">A substantial and impactful loss that contributes to the development or exacerbation of depressive symptoms, different from a death or a trauma</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact09">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>e9c76d6b1ec4c7c3aa5e38ec318ff78c7bc03174de21b6b5a2b33166e8ae0905</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact02">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>e64af9c05ea30fb763ebae3a0509257e762db83ad8532c8fcdaac02826d6a5be</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <owns rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AccountID1"/>
-    <hasEducation>REDACTED</hasEducation>
-    <hasEthnicity>REDACTED</hasEthnicity>
-    <hasFamily>Mother</hasFamily>
-    <hasGender>REDACTED</hasGender>
-    <hasIncome>REDACTED</hasIncome>
-    <hasName>REDACTED</hasName>
-    <hasRelationship>Friend 01</hasRelationship>
-    <hasRelationship>Friend 02</hasRelationship>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact10">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>6056ae2fa6b104a2b76902c9664ffc89e272b65baed683d53eada9d9f6993f9b</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasGender">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasGender</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's gender</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlatform">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">comesFromSocialPlatform</rdfs:label>
-    <rdfs:comment xml:lang="en">The social media platform where the publication was published</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
-    <rdfs:label xml:lang="en">label</rdfs:label>
-    <rdfs:comment xml:lang="en">Provides a human-readable version of a resource name.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact03">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>5459fabf4692cee8c490292c166a0b626a2bc58ae2d8c400cddd9642c0a98ee1</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>cced3e94c2f464d968fdab4728f37ec894a2234b1651959a20d02d172dbcf640</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact14">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>22405e91888ce3483c6d7f12361e1b83e831984f66bb96acfa7d221b99029e6a</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Feeling</rdfs:label>
-    <rdfs:comment xml:lang="en">An emotional state or reaction that is experienced internally and expressed outwardly</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID02">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace16"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact02"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2023-12-21T20:14:08Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
-    <hasTextContent>Taking advantage of the holidays to draw a little</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>The text conveys a range of sentiments including overcoming [REDACTED], personal growth, and a sense of victory. These can relate to sentiments of hope, perseverance, and happiness.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Appetite">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Appetite</rdfs:label>
-    <rdfs:comment xml:lang="en">The natural desire to satisfy bodily needs for food.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact06">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>406929903c329f3087ca9e4c5c7d10c208ef357fed8a9cb5eb48e04099d9016d</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Identification">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Identification</rdfs:label>
-    <rdfs:comment xml:lang="en">A technique used identify the data that must be collected</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace06"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace07"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact07"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-04-29T22:05:03Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4588</hasSentimentScore>
-    <hasTextContent>In the first meeting with a new coworker, she said that I look like a character from The Lord of the Rings. I thought it was funny, so I decided to check if my social isolation look resembles any of the bearded ones, or if I'm an original character. What do you think?</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Context</rdfs:label>
-    <rdfs:comment xml:lang="en">Historical data and conditions that influence or relate to the current state and behavior of the subject.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasTextContent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasTextContent</rdfs:label>
-    <rdfs:comment xml:lang="en">The content of a social media publication, specifically text data.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent"/>
+  <rdf:Description rdf:nodeID="N4c46b3d03a8f406db76999a98cbcdf7c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Ne66887edd06c4540a40831ef745aa8d8"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/finds">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -386,42 +184,6 @@
     <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isFoundUsing"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasExplanation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasExplanation</rdfs:label>
-    <rdfs:comment xml:lang="en">The documentation of why a text was considered relevant</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isPreservedAs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">isPreservedAs</rdfs:label>
-    <rdfs:comment xml:lang="en">An artifact generated to preserve a social media publication</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEducation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasEducation</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's level of education</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SomaticComplaints">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Somatic Complaints</rdfs:label>
-    <rdfs:comment xml:lang="en">Somatic complaints are physical symptoms that may arise from psychological factors, often lacking a clear medical cause.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace01">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>the text includes a name, "[REDACTED]," which is the name of the cat</hasExplanation>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID06">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -437,203 +199,13 @@
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact04">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>943a7a3e891937212b76dfc4db0eed8f405c7acd98866880a91a40d1f58b5065</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AccountID1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
-    <comesFromSocialPlataform>Instagram</comesFromSocialPlataform>
-    <hasAccountUrl>https://www.instagram.com/REDACTED/</hasAccountUrl>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>819eba076a38e6aa3114b05be2182733aa0c3c4306310017c28cc543bb115e35</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Interest">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Interest</rdfs:label>
-    <rdfs:comment xml:lang="en">The feeling of wanting to know or learn about something or someone.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace01"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact13"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-04-01T00:04:48Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
-    <hasTextContent>This is [REDACTED], my cat, for those who don't know. Taking advantage of the quarantine to practice a little drawing</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Identification"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AlcoholUse"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>The text mentions [REDACTED], which indicates alcohol use.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact01">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>c73ac0375935c5ffaf6b1dfec1ed9e949f9ea2cb618ca5e7ce7435d6ecfebeeb</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID08">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace05"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact08"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-03-12T21:26:43Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
-    <hasTextContent>Because I couldn't keep drawing</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact08">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>b002d6ec642f346d0d65ba10f35655eee290cca3dd2c8bc95027a923748991a0</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Sleep">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Sleep</rdfs:label>
-    <rdfs:comment xml:lang="en">Sleep refers to traces of the natural state of rest undergo by people</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/DepressedMood">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">DepressedMood</rdfs:label>
-    <rdfs:comment xml:lang="en">Persistent sadness and a lack of interest or pleasure in previously rewarding or enjoyable activities. Synonyms: Sadness, Rumination, Worthlessness, Distress, Indecisiveness, Hopelessness, Melancholy and Loneliness</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <skos:altLabel xml:lang="en">Sadness</skos:altLabel>
-    <skos:altLabel xml:lang="en">Rumination</skos:altLabel>
-    <skos:altLabel xml:lang="en">Worthlessness</skos:altLabel>
-    <skos:altLabel xml:lang="en">Distress</skos:altLabel>
-    <skos:altLabel xml:lang="en">Indecisiveness</skos:altLabel>
-    <skos:altLabel xml:lang="en">Hopelessness</skos:altLabel>
-    <skos:altLabel xml:lang="en">Melancholy</skos:altLabel>
-    <skos:altLabel xml:lang="en">Loneliness</skos:altLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isAbout">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">isAbout</rdfs:label>
-    <rdfs:comment xml:lang="en">A context is about a specific person</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Memory">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Memory difficulty</rdfs:label>
-    <rdfs:comment xml:lang="en">Difficulty retrieving memories, a cognitive symptom associated with depression.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasMoment">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasFamily">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasMoment</rdfs:label>
-    <rdfs:comment xml:lang="en">The moment when a context (publication or mental record) is created</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    <rdfs:label xml:lang="en">hasFamily</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's family member or group</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Stress">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Stress</rdfs:label>
-    <rdfs:comment xml:lang="en">A state of mental or emotional strain or tension resulting from adverse or demanding circumstances.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Post</rdfs:label>
-    <rdfs:comment xml:lang="en">A publication on a social media platform, presented as a post, represents a timestamped update that remains independent from other posts, contrasting with profile updates that overwrite the previous content.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace06">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>includes a relationship context (interaction with a coworker)</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N05ad9ffa74314363b977b0739525fe77">
-    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-    <rdf:rest rdf:nodeID="Na337b0d6c732440882171d069efd952a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <rdfs:label xml:lang="en">Serapis Personal Mental Health Ontology (SPMH)</rdfs:label>
-    <dc:title>Serapis Personal Mental Health Ontology (SPMH)</dc:title>
-    <dc:description xml:lang="en">Trace-based ontology for organizing depression-related social media evidence with provenance, aligned with DSM-5-TR diagnostic criteria.</dc:description>
-    <dc:creator>Alexandre Augusto Foppa, Wesllei Felipe Heckler, Luan Paris Feijó, Jorge Luis Victória Barbosa</dc:creator>
-    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <owl:versionInfo>1.0.4</owl:versionInfo>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact15">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>58f96f5efde1ccb26bea2231f29d3c321805a5f39baf190033372c84c107a608</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasImageContent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasImageContent</rdfs:label>
-    <rdfs:comment xml:lang="en">The content of a social media publication, specifically image data.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#base64Binary"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isRelevant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">isRelevant</rdfs:label>
-    <rdfs:comment xml:lang="en">A flag indicating if an artifact is relevant for a depression diagnosis</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Storage"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID03">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -652,27 +224,6 @@
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace17">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>the text might convey sentiments of disappointment or dissatisfaction regarding the artistic outcome, reflecting feelings such as frustration.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasA">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">containsTrace</rdfs:label>
-    <rdfs:comment xml:lang="en">A context may have 0 to multiple traces of depression</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isFoundIn"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Gastrointestinal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Gastrointestinal</rdfs:label>
-    <rdfs:comment xml:lang="en">Disturbances in the stomach and intestines.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isFoundUsing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">isFoundUsing</rdfs:label>
@@ -680,6 +231,213 @@
     <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">Serapis Personal Mental Health Ontology (SPMH)</rdfs:label>
+    <dc:title>Serapis Personal Mental Health Ontology (SPMH)</dc:title>
+    <dc:description xml:lang="en">Trace-based ontology for organizing depression-related social media evidence with provenance, aligned with DSM-5-TR diagnostic criteria.</dc:description>
+    <dc:creator>Alexandre Augusto Foppa, Wesllei Felipe Heckler, Luan Paris Feijó, Jorge Luis Victória Barbosa</dc:creator>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <owl:versionInfo>1.0.4</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>the text conveys a sense of hope and positivity by offering the companionship of kittens, which can relate to feelings of pleasure and joy.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>943a7a3e891937212b76dfc4db0eed8f405c7acd98866880a91a40d1f58b5065</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>cced3e94c2f464d968fdab4728f37ec894a2234b1651959a20d02d172dbcf640</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AccountID1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
+    <comesFromSocialPlataform>Instagram</comesFromSocialPlataform>
+    <hasAccountUrl>https://www.instagram.com/REDACTED/</hasAccountUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlataform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">comesFromSocialPlatform</rdfs:label>
+    <rdfs:comment xml:lang="en">The social media platform where the publication was published</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Death">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Death</rdfs:label>
+    <rdfs:comment xml:lang="en">A death of a familiar, friend or any significant people that may cause grief, including pets.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isOwned">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">isOwnedBy</rdfs:label>
+    <rdfs:comment xml:lang="en">A social media account has a person as an owner</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/owns"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Weight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Weight</rdfs:label>
+    <rdfs:comment xml:lang="en">Pertains to body mass, can refer to changes in weight (gain and/or loss)</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact06">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>406929903c329f3087ca9e4c5c7d10c208ef357fed8a9cb5eb48e04099d9016d</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasTextContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasTextContent</rdfs:label>
+    <rdfs:comment xml:lang="en">The content of a social media publication, specifically text data.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace04"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact09"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-12-24T23:47:39Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
+    <hasTextContent>Want a loving companion for the next year? How about one of these kittens?</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasAge</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's age</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>c73ac0375935c5ffaf6b1dfec1ed9e949f9ea2cb618ca5e7ce7435d6ecfebeeb</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/publishedInSocialPlatform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">publishedInSocialPlatform</rdfs:label>
+    <rdfs:comment xml:lang="en">The social media platform where the account was created</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/DecisionMaking">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">DecisionMaking</rdfs:label>
+    <rdfs:comment xml:lang="en">The process of making choices by identifying options and assessing the impact of each option.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace14">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>The mention of no longer using a [REDACTED] and experiencing [REDACTED] indicates a physical condition, potentially an injury or chronic condition, that has been managed over time.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Presentation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Presentation</rdfs:label>
+    <rdfs:comment xml:lang="en">A technique used to share the intelligence produced.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace16"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact02"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2023-12-21T20:14:08Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
+    <hasTextContent>Taking advantage of the holidays to draw a little</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasImageContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasImageContent</rdfs:label>
+    <rdfs:comment xml:lang="en">The content of a social media publication, specifically image data.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#base64Binary"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasContent</rdfs:label>
+    <rdfs:comment xml:lang="en">The content of a social media publication in general</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID08">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace05"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact08"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-03-12T21:26:43Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
+    <hasTextContent>Because I couldn't keep drawing</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isRelevant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">isRelevant</rdfs:label>
+    <rdfs:comment xml:lang="en">A flag indicating if an artifact is relevant for a depression diagnosis</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasRelationship">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -689,14 +447,33 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/creates">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasHashcode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasHashcode</rdfs:label>
+    <rdfs:comment xml:lang="en">A hashcode for data integrity assurance</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Artifact</rdfs:label>
+    <rdfs:comment xml:lang="en">Any data that provides evidence of computer activity or digital interactions, preserved for analysis and trackability.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace06">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>includes a relationship context (interaction with a coworker)</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContext">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">creates</rdfs:label>
-    <rdfs:comment xml:lang="en">A procedure can create an artifact</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <rdfs:label xml:lang="en">hasContext</rdfs:label>
+    <rdfs:comment xml:lang="en">A person may have several contexts</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isResultOf"/>
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isAbout"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID14">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -711,10 +488,10 @@
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Impairment">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Impairment</rdfs:label>
-    <rdfs:comment xml:lang="en">A reduction in function or ability, often described in the context of physical or mental capabilities.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cognition</rdfs:label>
+    <rdfs:comment xml:lang="en">The mental action or process of acquiring knowledge and understanding through thought, experience, and the senses.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Insomnia">
@@ -722,6 +499,94 @@
     <rdfs:label xml:lang="en">Insomnia</rdfs:label>
     <rdfs:comment xml:lang="en">Insomnia is characterized by difficulty falling asleep or staying asleep, leading to inadequate or non-restorative sleep.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Sleep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasUrl</rdfs:label>
+    <rdfs:comment xml:lang="en">The url from where the data from a publication was captured</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicideAttempt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Suicide Attempt</rdfs:label>
+    <rdfs:comment xml:lang="en">A suicide attempt is an intentional, self-inflicted action with the purpose of causing one's own death, although it may not result in death.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Publication</rdfs:label>
+    <rdfs:comment xml:lang="en">A publication made in a social media platform by a person</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace06"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace07"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact07"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-04-29T22:05:03Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4588</hasSentimentScore>
+    <hasTextContent>In the first meeting with a new coworker, she said that I look like a character from The Lord of the Rings. I thought it was funny, so I decided to check if my social isolation look resembles any of the bearded ones, or if I'm an original character. What do you think?</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRelevant>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>Yes, the text conveys sentiments of sadness and loss due to the death of "dear [REDACTED]," which might be a nickname for a beloved pet or individual. It also expresses a hopeful sentiment that "Heaven became a happier place."</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>the text includes a name, "[REDACTED]," which is the name of the cat</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ProfileID1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Profile"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact15"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4588</hasSentimentScore>
+    <hasTextContent>REDACTED</hasTextContent>
+    <hasUrl>https://www.instagram.com/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Impairment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Impairment</rdfs:label>
+    <rdfs:comment xml:lang="en">A reduction in function or ability, often described in the context of physical or mental capabilities.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Interest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Interest</rdfs:label>
+    <rdfs:comment xml:lang="en">The feeling of wanting to know or learn about something or someone.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-10-05T14:17:44Z</hasMoment>
+    <hasTextContent>The patient underwent a thorough evaluation session, including clinical interviews and psychological assessments, to assess their mental health status. It was concluded that the patient does not exhibit symptoms consistent with depression.</hasTextContent>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>e9c76d6b1ec4c7c3aa5e38ec318ff78c7bc03174de21b6b5a2b33166e8ae0905</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasAccountUrl">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -731,101 +596,45 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact13">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace16">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
-    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>a113e5dd1b7aedfb67f97266c090d12f9a0441c917060a4378a7ab340eebc753</hasHashcode>
-    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>Potentially, the text might convey a sense of relaxation or enjoyment from engaging in a leisure activity (drawing) during the holidays, but these sentiments are not explicitly mentioned.</hasExplanation>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlataform">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">comesFromSocialPlatform</rdfs:label>
-    <rdfs:comment xml:lang="en">The social media platform where the publication was published</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlatform"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Fatigue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Account</rdfs:label>
-    <rdfs:comment xml:lang="en">A personal social media account</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Psychotic">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Psychotic</rdfs:label>
-    <rdfs:comment xml:lang="en">Conditions related to psychosis disorders, which includes delusions or hallucinations, often involving a loss of contact with reality.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trauma">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Trauma</rdfs:label>
-    <rdfs:comment xml:lang="en">A deeply distressing or disturbing experience that overwhelms an individual's ability to cope, often resulting in lasting emotional or psychological effects."</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Bipolar</rdfs:label>
-    <rdfs:comment xml:lang="en">A psychiatric condition characterized by extreme mood swings, including manic and depressive episodes.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID01">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
-    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace17"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact01"/>
-    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
-    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-02-26T01:07:57Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.5423</hasSentimentScore>
-    <hasTextContent>The death of [REDACTED], sitting in front of a dead rosebush that grew where she stuck her umbrella in the ground. It didn't turn out as I wanted, but I posted it anyway</hasTextContent>
-    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
-    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Guilt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Guilt</rdfs:label>
-    <rdfs:comment xml:lang="en">The emotional experience resulting from the perception of having done something wrong.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fatigue</rdfs:label>
+    <rdfs:comment xml:lang="en">Fatigue is a state of tiredness or exhaustion resulting from mental or physical exertion or illness. Synonyms:Burrden, Energy (Lack of), Tiredness</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <skos:altLabel xml:lang="en">Burden</skos:altLabel>
+    <skos:altLabel xml:lang="en">Energy (Lack of)</skos:altLabel>
+    <skos:altLabel xml:lang="en">Tiredness</skos:altLabel>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Hypomania">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Hypomania</rdfs:label>
-    <rdfs:comment xml:lang="en">A milder form of mania, marked by elation and hyperactivity.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasHashcode">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasHashcode</rdfs:label>
-    <rdfs:comment xml:lang="en">A hashcode for data integrity assurance</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID12">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID04">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace11"/>
     <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact12"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact04"/>
     <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
     <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-04-23T21:31:08Z</hasMoment>
-    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.2263</hasSentimentScore>
-    <hasTextContent>Ready to buy bread, and to deliver a fatality to Scorpion</hasTextContent>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-12-22T00:51:17Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
+    <hasTextContent>Updating the profile picture, after four years</hasTextContent>
     <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
     <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
-    <rdfs:label xml:lang="en">comment</rdfs:label>
-    <rdfs:comment xml:lang="en">Provides a human-readable description of a resource.</rdfs:comment>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/creates">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">creates</rdfs:label>
+    <rdfs:comment xml:lang="en">A procedure can create an artifact</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isResultOf"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact05">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact15">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
     <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
@@ -833,8 +642,24 @@
     <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
     <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
     <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
-    <hasHashcode>e0947431a6f6e4e7df69bfc6e7cc1559f5716d3880815e6e3f115687fd175ff7</hasHashcode>
+    <hasHashcode>58f96f5efde1ccb26bea2231f29d3c321805a5f39baf190033372c84c107a608</hasHashcode>
     <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdfs:label xml:lang="en">alternative label</rdfs:label>
+    <rdfs:comment xml:lang="en">Alternative lexical label for a resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Feeling</rdfs:label>
+    <rdfs:comment xml:lang="en">An emotional state or reaction that is experienced internally and expressed outwardly</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Hypersomnia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Hypersomnia</rdfs:label>
+    <rdfs:comment xml:lang="en">Hypersomnia is characterized by excessive daytime sleepiness, leading to prolonged and unrefreshing sleep.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Sleep"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasCreationMoment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -843,6 +668,28 @@
     <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Relation</rdfs:label>
+    <rdfs:comment xml:lang="en">Refers to a significant connection with someone like a parent or a pet, characterized by emotional bonds and personal attachment.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SubstanceUse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Substance Use</rdfs:label>
+    <rdfs:comment xml:lang="en">A trace of substance use other than alcohol, whether illicit or prescribed medication, which may impact the diagnosis of depression</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Storage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Hypomania">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Hypomania</rdfs:label>
+    <rdfs:comment xml:lang="en">A milder form of mania, marked by elation and hyperactivity.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Schizophrenia">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -858,190 +705,43 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Cognition</rdfs:label>
-    <rdfs:comment xml:lang="en">The mental action or process of acquiring knowledge and understanding through thought, experience, and the senses.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace14">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID01">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>The mention of no longer using a [REDACTED] and experiencing [REDACTED] indicates a physical condition, potentially an injury or chronic condition, that has been managed over time.</hasExplanation>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace17"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact01"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-02-26T01:07:57Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.5423</hasSentimentScore>
+    <hasTextContent>The death of [REDACTED], sitting in front of a dead rosebush that grew where she stuck her umbrella in the ground. It didn't turn out as I wanted, but I posted it anyway</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasCapturedMoment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasCapturedMoment</rdfs:label>
-    <rdfs:comment xml:lang="en">The moment when an evidence is captured</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasVideoContent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasVideoContent</rdfs:label>
-    <rdfs:comment xml:lang="en">The content of a social media publication, specifically video data.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContext">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isAbout">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">hasContext</rdfs:label>
-    <rdfs:comment xml:lang="en">A person may have several contexts</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isAbout"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasAge">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasAge</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's age</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Concentration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Concentration</rdfs:label>
-    <rdfs:comment xml:lang="en">The ability to focus attention on a task for a sustained period of time.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>Potentially, it could suggest a sense of renewal or change, given the update of a profile picture after a significant period. However, these feelings are not explicitly mentioned.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Behaviour</rdfs:label>
-    <rdfs:comment xml:lang="en">Behavior encompasses actions, reactions, or conduct displayed by individuals in various situations, reflecting their thoughts, feelings, and intentions.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasContent</rdfs:label>
-    <rdfs:comment xml:lang="en">The content of a social media publication in general</rdfs:comment>
+    <rdfs:label xml:lang="en">isAbout</rdfs:label>
+    <rdfs:comment xml:lang="en">A context is about a specific person</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ImpulseControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Impulse Control</rdfs:label>
-    <rdfs:comment xml:lang="en">The ability to resist or delay an impulse, drive, or temptation to act.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasUrl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasUrl</rdfs:label>
-    <rdfs:comment xml:lang="en">The url from where the data from a publication was captured</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Relation</rdfs:label>
-    <rdfs:comment xml:lang="en">Refers to a significant connection with someone like a parent or a pet, characterized by emotional bonds and personal attachment.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasIncome">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasIncome</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's level of income</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEthnicity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasEthnicity</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's ethnicity</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Analisys</rdfs:label>
-    <rdfs:comment xml:lang="en">A technique for turning data into intelligence.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isOwned">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">isOwnedBy</rdfs:label>
-    <rdfs:comment xml:lang="en">A social media account has a person as an owner</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/owns"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Profile">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Storage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Profile</rdfs:label>
-    <rdfs:comment xml:lang="en">A publication on a social media platform, presented as a profile, represents an update of the users profile, usually whitout timestamp that overwrite the previous content.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:label xml:lang="en">Evidence storage procedure</rdfs:label>
+    <rdfs:comment xml:lang="en">Procedure step for storing collected digital evidence with integrity controls.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Memory"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace16">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>Potentially, the text might convey a sense of relaxation or enjoyment from engaging in a leisure activity (drawing) during the holidays, but these sentiments are not explicitly mentioned.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Discrimination">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Discrimination</rdfs:label>
-    <rdfs:comment xml:lang="en">Unjust or prejudicial treatment of different categories of people, often based on race, age, or gender.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Irritability">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Irritability</rdfs:label>
-    <rdfs:comment xml:lang="en">The quality or state of being easily annoyed or provoked to anger.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace09">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>The text indicates a relationship of affection and loss (the speaker and the deceased referred to as "dear [REDACTED]")</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AlcoholUse">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Alcohol Use</rdfs:label>
-    <rdfs:comment xml:lang="en">A trace of alcohol use, whether in a controlled social setting or associated with alcohol abuse.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord01">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord"/>
-    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
-    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-10-05T14:17:44Z</hasMoment>
-    <hasTextContent>The patient underwent a thorough evaluation session, including clinical interviews and psychological assessments, to assess their mental health status. It was concluded that the patient does not exhibit symptoms consistent with depression.</hasTextContent>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasSentimentScore">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasSentimentScore</rdfs:label>
-    <rdfs:comment xml:lang="en">A sentiment score calculated by sentiment analysis techniques</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N59a55259eb42411e87f0e0890f5bd0a6">
-    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdf:rest rdf:nodeID="N9ce2c9f4482b480c8e2aaccf717b27eb"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
-    <rdfs:label xml:lang="en">license</rdfs:label>
-    <rdfs:comment xml:lang="en">Legal document giving official permission to do something with the resource.</rdfs:comment>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">containsTrace</rdfs:label>
+    <rdfs:comment xml:lang="en">A context may have 0 to multiple traces of depression</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isFoundIn"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ChildhoodExperiences">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1049,19 +749,11 @@
     <rdfs:comment xml:lang="en">Any traumas or memorable experiences from the person's childhood that may influence a depression diagnosis</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Concentration">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Medical Records</rdfs:label>
-    <rdfs:comment xml:lang="en">Medical records generated by a professional recording the relevant information after a medical or therapeutic appointment.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isFoundIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">isFoundIn</rdfs:label>
-    <rdfs:comment xml:lang="en">A trace is found in a specific publication or medical record</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">Concentration</rdfs:label>
+    <rdfs:comment xml:lang="en">The ability to focus attention on a task for a sustained period of time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/owns">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1071,189 +763,74 @@
     <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Suicidal Behaviour</rdfs:label>
-    <rdfs:comment xml:lang="en">Suicidal behavior refers to actions or thoughts that involve an individual contemplating or attempting to take their own life.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9d08efe59ce641abaad9117aefcbf7f1">
-    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <rdf:rest rdf:nodeID="N59a55259eb42411e87f0e0890f5bd0a6"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Thinking">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Thinking</rdfs:label>
-    <rdfs:comment xml:lang="en">The process of considering or reasoning about something; cognitive consideration of information.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace08">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Irritability"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>the text might convey a sense of urgency or mild distress about needing a plate for lunch, which can relate to feelings of annoyance or frustration. The message humorously expresses a minor inconvenience (a missing plate) and uses personification ("Human, my plate was missing") to add character to the statement, likely meant to amuse or engage social media followers.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Person</rdfs:label>
-    <rdfs:comment xml:lang="en">A person subject of the investigation</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Trace</rdfs:label>
-    <rdfs:comment xml:lang="en">A subtype of material evidence is trace evidence, which consists of small amounts (often microscopic) of material found at a crime scene that can also be relevant to an investigation.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SexualAbuse">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Sexual Abuse</rdfs:label>
-    <rdfs:comment xml:lang="en">Any specific trace that can signify sexual abuse.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PsychomotorActivity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Psychomotor Activity</rdfs:label>
-    <rdfs:comment xml:lang="en">Physical activities that are influenced by mental processes, including changes in speed or movement associated with mental states.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
-    <rdfs:label xml:lang="en">title</rdfs:label>
-    <rdfs:comment xml:lang="en">Names the resource.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2011505aa5b14c92b1fb33a663b8860a">
-    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
-    <rdf:rest rdf:nodeID="N9d08efe59ce641abaad9117aefcbf7f1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Collection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Collection</rdfs:label>
-    <rdfs:comment xml:lang="en">A technique used to collect the data.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Weight">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Weight</rdfs:label>
-    <rdfs:comment xml:lang="en">Pertains to body mass, can refer to changes in weight (gain and/or loss)</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>the text conveys humor and perhaps curiosity about self-appearance which could relate to the feelings of amusement or curiosity.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N74f09249cad04e4e94fe8b331a8402a3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N2011505aa5b14c92b1fb33a663b8860a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace05">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>Potentially, the inability to continue drawing could be linked to feelings like frustration or sadness, but these are not explicitly stated in the text.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasName">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasName</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's name</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicideIdeation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Suicide Ideation</rdfs:label>
-    <rdfs:comment xml:lang="en">Suicidal ideation refers to thoughts, contemplation, or fantasies about taking one's own life.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace10">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>Yes, the text conveys sentiments of sadness and loss due to the death of "dear [REDACTED]," which might be a nickname for a beloved pet or individual. It also expresses a hopeful sentiment that "Heaven became a happier place."</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Collection"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isResultOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">isResultOf</rdfs:label>
-    <rdfs:comment xml:lang="en">An artifact is the result of a procedure</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Procedure</rdfs:label>
-    <rdfs:comment xml:lang="en">A technique used to turn raw data into intelligence.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SocialIsolation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Social Isolation</rdfs:label>
-    <rdfs:comment xml:lang="en">A state where an individual lacks a sense of social belonging, social engagement, and fulfilling relationships.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9ce2c9f4482b480c8e2aaccf717b27eb">
-    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
-    <rdf:rest rdf:nodeID="N05ad9ffa74314363b977b0739525fe77"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Artifact</rdfs:label>
-    <rdfs:comment xml:lang="en">Any data that provides evidence of computer activity or digital interactions, preserved for analysis and trackability.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na337b0d6c732440882171d069efd952a">
-    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace15">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
     <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
     <hasExplanation>mentions a significant life event (returning to [REDACTED]), a physical condition ([REDACTED]), and personal lifestyle changes.</hasExplanation>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Publication</rdfs:label>
-    <rdfs:comment xml:lang="en">A publication made in a social media platform by a person</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace04">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID13">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>the text conveys a sense of hope and positivity by offering the companionship of kittens, which can relate to feelings of pleasure and joy.</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Condition</rdfs:label>
-    <rdfs:comment xml:lang="en">A state of health, whether normal or disrupted, that may influences the depression diagnosis.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
-    <rdfs:label xml:lang="en">creator</rdfs:label>
-    <rdfs:comment xml:lang="en">Names the entity primarily responsible for making the resource.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Depression">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Depression</rdfs:label>
-    <rdfs:comment xml:lang="en">A psychiatric condition marked by significant sadness, lack of energy, and low mood.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace03">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
-    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
-    <hasExplanation>The text mentions an impact on physical condition due to the pandemic, which affected the ability to attend a [REDACTED].</hasExplanation>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace01"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact13"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-04-01T00:04:48Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
+    <hasTextContent>This is [REDACTED], my cat, for those who don't know. Taking advantage of the quarantine to practice a little drawing</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRelevant>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Event</rdfs:label>
     <rdfs:comment xml:lang="en">A significant event in a persons life that can affected a depression diagnoses</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEthnicity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasEthnicity</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's ethnicity</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PostID05">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace09"/>
+    <hasA rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace10"/>
+    <isAbout rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person01"/>
+    <isPreservedAs rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact05"/>
+    <publishedInSocialPlatform>Instagram</publishedInSocialPlatform>
+    <hasCapturedMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-08-05T19:05:54Z</hasCapturedMoment>
+    <hasMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-06-21T02:58:09Z</hasMoment>
+    <hasSentimentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2263</hasSentimentScore>
+    <hasTextContent>Rest in peace, dear [REDACTED]. Heaven became a happier place</hasTextContent>
+    <hasUrl>https://www.instagram.com/p/REDACTED/</hasUrl>
+    <isRelevant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRelevant>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasExplanation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasExplanation</rdfs:label>
+    <rdfs:comment xml:lang="en">The documentation of why a text was considered relevant</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Behaviour</rdfs:label>
+    <rdfs:comment xml:lang="en">Behavior encompasses actions, reactions, or conduct displayed by individuals in various situations, reflecting their thoughts, feelings, and intentions.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Identification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Identification</rdfs:label>
+    <rdfs:comment xml:lang="en">A technique used identify the data that must be collected</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasOriginIn">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1264,26 +841,453 @@
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <owl:inverseOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isPreservedAs"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Presentation">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SocialIsolation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Presentation</rdfs:label>
-    <rdfs:comment xml:lang="en">A technique used to share the intelligence produced.</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Isolation</rdfs:label>
+    <rdfs:comment xml:lang="en">A state where an individual lacks a sense of social belonging, social engagement, and fulfilling relationships.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Mania">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mania</rdfs:label>
+    <rdfs:comment xml:lang="en">A mental state characterized by excessive excitement, energy, and euphoria.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Memory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Memory difficulty</rdfs:label>
+    <rdfs:comment xml:lang="en">Difficulty retrieving memories, a cognitive symptom associated with depression.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>The text expresses gratitude and surprise, and it implicitly conveys feelings of regret for the delayed acknowledgment. These sentiments relate to gratitude and regret.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SexualAbuse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Sexual Abuse</rdfs:label>
+    <rdfs:comment xml:lang="en">Any specific trace that can signify sexual abuse.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Suicidal Behaviour</rdfs:label>
+    <rdfs:comment xml:lang="en">Suicidal behavior refers to actions or thoughts that involve an individual contemplating or attempting to take their own life.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasVideoContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasVideoContent</rdfs:label>
+    <rdfs:comment xml:lang="en">The content of a social media publication, specifically video data.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>de54672e3f452459ac79689f601c8889b5a1e0a629a75bb01ab9650134f08449</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Depression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Depression</rdfs:label>
+    <rdfs:comment xml:lang="en">A psychiatric condition marked by significant sadness, lack of energy, and low mood.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Irritability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Irritability</rdfs:label>
+    <rdfs:comment xml:lang="en">The quality or state of being easily annoyed or provoked to anger.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AlcoholUse"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>The text mentions [REDACTED], which indicates alcohol use.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Thinking">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Thinking</rdfs:label>
+    <rdfs:comment xml:lang="en">The process of considering or reasoning about something; cognitive consideration of information.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Bipolar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Bipolar</rdfs:label>
+    <rdfs:comment xml:lang="en">A psychiatric condition characterized by extreme mood swings, including manic and depressive episodes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Pain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Pain</rdfs:label>
+    <rdfs:comment xml:lang="en">An unpleasant sensory and emotional experience associated with actual or potential tissue damage.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Appetite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Appetite</rdfs:label>
+    <rdfs:comment xml:lang="en">The natural desire to satisfy bodily needs for food.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Pleasure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Pleasure</rdfs:label>
+    <rdfs:comment xml:lang="en">A feeling of happy satisfaction and enjoyment.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact13">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>a113e5dd1b7aedfb67f97266c090d12f9a0441c917060a4378a7ab340eebc753</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Sleep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Sleep</rdfs:label>
+    <rdfs:comment xml:lang="en">Sleep refers to traces of the natural state of rest undergo by people</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>the text might convey sentiments of disappointment or dissatisfaction regarding the artistic outcome, reflecting feelings such as frustration.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>819eba076a38e6aa3114b05be2182733aa0c3c4306310017c28cc543bb115e35</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/AlcoholUse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Alcohol Use</rdfs:label>
+    <rdfs:comment xml:lang="en">A trace of alcohol use, whether in a controlled social setting or associated with alcohol abuse.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Behaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Post">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Post</rdfs:label>
+    <rdfs:comment xml:lang="en">A publication on a social media platform, presented as a post, represents a timestamped update that remains independent from other posts, contrasting with profile updates that overwrite the previous content.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Collection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Collection</rdfs:label>
+    <rdfs:comment xml:lang="en">A technique used to collect the data.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
-    <rdfs:label xml:lang="en">version information</rdfs:label>
-    <rdfs:comment xml:lang="en">Annotation property for ontology version metadata.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasFamily">
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasEducation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">hasFamily</rdfs:label>
-    <rdfs:comment xml:lang="en">A person's family member or group</rdfs:comment>
+    <rdfs:label xml:lang="en">hasEducation</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's level of education</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Relation"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>The text indicates a relationship of affection and loss (the speaker and the deceased referred to as "dear [REDACTED]")</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>The text mentions an impact on physical condition due to the pandemic, which affected the ability to attend a [REDACTED].</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SignificantLoss">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Significant Loss</rdfs:label>
+    <rdfs:comment xml:lang="en">A substantial and impactful loss that contributes to the development or exacerbation of depressive symptoms, different from a death or a trauma</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/MedicalRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Medical Records</rdfs:label>
+    <rdfs:comment xml:lang="en">Medical records generated by a professional recording the relevant information after a medical or therapeutic appointment.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isPreservedAs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">isPreservedAs</rdfs:label>
+    <rdfs:comment xml:lang="en">An artifact generated to preserve a social media publication</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>Potentially, it could suggest a sense of renewal or change, given the update of a profile picture after a significant period. However, these feelings are not explicitly mentioned.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasIncome">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasIncome</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's level of income</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Discrimination">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Discrimination</rdfs:label>
+    <rdfs:comment xml:lang="en">Unjust or prejudicial treatment of different categories of people, often based on race, age, or gender.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Gastrointestinal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Gastrointestinal</rdfs:label>
+    <rdfs:comment xml:lang="en">Disturbances in the stomach and intestines.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace08">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Irritability"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>the text might convey a sense of urgency or mild distress about needing a plate for lunch, which can relate to feelings of annoyance or frustration. The message humorously expresses a minor inconvenience (a missing plate) and uses personification ("Human, my plate was missing") to add character to the statement, likely meant to amuse or engage social media followers.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Psychotic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Psychotic</rdfs:label>
+    <rdfs:comment xml:lang="en">Conditions related to psychosis disorders, which includes delusions or hallucinations, often involving a loss of contact with reality.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N205ff5ca4d71453fae7ce24b5c5f4dc0">
+    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Guilt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Guilt</rdfs:label>
+    <rdfs:comment xml:lang="en">The emotional experience resulting from the perception of having done something wrong.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>6056ae2fa6b104a2b76902c9664ffc89e272b65baed683d53eada9d9f6993f9b</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
+    <rdfs:label xml:lang="en">description</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the resource in free text.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Account</rdfs:label>
+    <rdfs:comment xml:lang="en">A personal social media account</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/isFoundIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">isFoundIn</rdfs:label>
+    <rdfs:comment xml:lang="en">A trace is found in a specific publication or medical record</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb5209a496e904311869c452e64f021a2">
+    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context"/>
+    <rdf:rest rdf:nodeID="N8eeefafe0d124784880c54335e71bb8c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/ImpulseControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Impulse Control</rdfs:label>
+    <rdfs:comment xml:lang="en">The ability to resist or delay an impulse, drive, or temptation to act.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact14">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>22405e91888ce3483c6d7f12361e1b83e831984f66bb96acfa7d221b99029e6a</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/PsychomotorActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Psychomotor Activity</rdfs:label>
+    <rdfs:comment xml:lang="en">Physical activities that are influenced by mental processes, including changes in speed or movement associated with mental states.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/hasGender">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hasGender</rdfs:label>
+    <rdfs:comment xml:lang="en">A person's gender</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicideIdeation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Suicide Ideation</rdfs:label>
+    <rdfs:comment xml:lang="en">Suicidal ideation refers to thoughts, contemplation, or fantasies about taking one's own life.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SuicidalBehaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdfs:label xml:lang="en">creator</rdfs:label>
+    <rdfs:comment xml:lang="en">Names the entity primarily responsible for making the resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Procedure</rdfs:label>
+    <rdfs:comment xml:lang="en">A technique used to turn raw data into intelligence.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact05">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SQLliteLocalDatabase"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing"/>
+    <isResultOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/VADERSentimentScoring"/>
+    <hasHashcode>e0947431a6f6e4e7df69bfc6e7cc1559f5716d3880815e6e3f115687fd175ff7</hasHashcode>
+    <hasCreationMoment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-09-05T15:52:44Z</hasCreationMoment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/comesFromSocialPlatform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">comesFromSocialPlatform</rdfs:label>
+    <rdfs:comment xml:lang="en">The social media platform where the publication was published</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace13">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>The text conveys a range of sentiments including overcoming [REDACTED], personal growth, and a sense of victory. These can relate to sentiments of hope, perseverance, and happiness.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/RegularAPIExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Collection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Profile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Profile</rdfs:label>
+    <rdfs:comment xml:lang="en">A publication on a social media platform, presented as a profile, represents an update of the users profile, usually whitout timestamp that overwrite the previous content.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Publication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Context">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Context</rdfs:label>
+    <rdfs:comment xml:lang="en">Historical data and conditions that influence or relate to the current state and behavior of the subject.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+    <rdfs:label xml:lang="en">title</rdfs:label>
+    <rdfs:comment xml:lang="en">Names the resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/UserSharing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Identification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trauma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Trauma</rdfs:label>
+    <rdfs:comment xml:lang="en">A deeply distressing or disturbing experience that overwhelms an individual's ability to cope, often resulting in lasting emotional or psychological effects."</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N166fe8877cb34e418bbaa2795a38b2cf">
+    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Artifact"/>
+    <rdf:rest rdf:nodeID="Nb5209a496e904311869c452e64f021a2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTranslation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <rdfs:label xml:lang="en">label</rdfs:label>
+    <rdfs:comment xml:lang="en">Provides a human-readable version of a resource name.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdfs:label xml:lang="en">license</rdfs:label>
+    <rdfs:comment xml:lang="en">Legal document giving official permission to do something with the resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Analisys</rdfs:label>
+    <rdfs:comment xml:lang="en">A technique for turning data into intelligence.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Analisys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Delusion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Delusion</rdfs:label>
+    <rdfs:comment xml:lang="en">A false belief held with strong conviction despite superior evidence to the contrary.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Cognition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Stress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Stress</rdfs:label>
+    <rdfs:comment xml:lang="en">A state of mental or emotional strain or tension resulting from adverse or demanding circumstances.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/SomaticComplaints">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Somatic Complaints</rdfs:label>
+    <rdfs:comment xml:lang="en">Somatic complaints are physical symptoms that may arise from psychological factors, often lacking a clear medical cause.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Feeling"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8eeefafe0d124784880c54335e71bb8c">
+    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Person"/>
+    <rdf:rest rdf:nodeID="Nae29112ab44d4a11b29281a25cfbc22c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace05">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <isFoundUsing rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/LLMTraceDetection"/>
+    <hasExplanation>Potentially, the inability to continue drawing could be linked to feelings like frustration or sadness, but these are not explicitly stated in the text.</hasExplanation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+    <rdfs:label xml:lang="en">comment</rdfs:label>
+    <rdfs:comment xml:lang="en">Provides a human-readable description of a resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne66887edd06c4540a40831ef745aa8d8">
+    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Account"/>
+    <rdf:rest rdf:nodeID="N166fe8877cb34e418bbaa2795a38b2cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nae29112ab44d4a11b29281a25cfbc22c">
+    <rdf:first rdf:resource="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Procedure"/>
+    <rdf:rest rdf:nodeID="N205ff5ca4d71453fae7ce24b5c5f4dc0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/spmh/ontologies/2024/3/SPMH/Trace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Trace</rdfs:label>
+    <rdfs:comment xml:lang="en">A subtype of material evidence is trace evidence, which consists of small amounts (often microscopic) of material found at a crime scene that can also be relevant to an investigation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+    <rdfs:label xml:lang="en">version information</rdfs:label>
+    <rdfs:comment xml:lang="en">Annotation property for ontology version metadata.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>
